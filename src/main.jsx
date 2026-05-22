@@ -47,7 +47,7 @@ const sampleDocs = [
 
 const suggestedQuestions = [
   'What were the gas inlet temperatures in our previous GTC deliveries?',
-  'What duct dimensions were used in the Hydro Karmøy project?',
+  'What duct dimensions were used in the Hydro Karmoy project?',
   'What filter bag thickness was specified for the last aluminium smelter job?',
   'What flow volumes have we delivered solutions for?'
 ];
@@ -64,9 +64,9 @@ function answerFor(question, docs) {
     return {
       text: 'Previous GTC/FTP deliveries show inlet gas design and operating temperatures between 118 °C and 190 °C. For proposal screening, 175 °C continuous with a short-term 190 °C peak appears to be the highest cited GTC design case in the loaded set.',
       bullets: [
-        'Hydro Karmøy GTC: 142–168 °C measured during ramp-up; design basis 175 °C continuous / 190 °C short-term peak.',
+        'Hydro Karmoy GTC: 142–168 °C measured during ramp-up; design basis 175 °C continuous / 190 °C short-term peak.',
         'ALBA Line 6 FTP: 118–155 °C normal inlet range; dilution sequence above 165 °C.',
-        'Mosjøen GTC: 132 °C normal; 160 °C maximum at summer ambient condition.'
+        'Mosjoen GTC: 132 °C normal; 160 °C maximum at summer ambient condition.'
       ],
       citations: [
         { doc: 'Hydro_Karmoy_GTC_Commissioning_Report.pdf', section: '5.1 Start-up measurements', quote: 'Raw gas inlet temperature measured 142–168 °C... design basis was 175 °C continuous, 190 °C short-term peak.' },
@@ -78,7 +78,7 @@ function answerFor(question, docs) {
 
   if (q.includes('duct') || q.includes('dimension') || q.includes('karm')) {
     return {
-      text: 'For Hydro Karmøy, the indexed commissioning report cites a main inlet duct of DN 2800 with a refractory lined transition into the reactor vessel.',
+      text: 'For Hydro Karmoy, the indexed commissioning report cites a main inlet duct of DN 2800 with a refractory lined transition into the reactor vessel.',
       bullets: ['Main inlet duct: DN 2800.', 'Transition: refractory lined section to reactor vessel.', 'Associated design flow: 1,120,000 Nm³/h.'],
       citations: [{ doc: 'Hydro_Karmoy_GTC_Commissioning_Report.pdf', section: '3.2 Gas train design', quote: 'Main inlet duct DN 2800 with refractory lined transition to reactor vessel. Total flow basis 1,120,000 Nm³/h.' }]
     };
@@ -95,7 +95,7 @@ function answerFor(question, docs) {
   if (q.includes('flow') || q.includes('volume') || q.includes('nm') || q.includes('am')) {
     return {
       text: 'The loaded project set includes AQCS flow volumes from 740,000 Am³/h fan sizing up to 1,120,000 Nm³/h total GTC design basis.',
-      bullets: ['Hydro Karmøy: 1,120,000 Nm³/h total flow basis.', 'Mosjøen: ID fan capacity 740,000 Am³/h.', 'Values should be normalized before direct comparison in a proposal table.'],
+      bullets: ['Hydro Karmoy: 1,120,000 Nm³/h total flow basis.', 'Mosjoen: ID fan capacity 740,000 Am³/h.', 'Values should be normalized before direct comparison in a proposal table.'],
       citations: [
         { doc: 'Hydro_Karmoy_GTC_Commissioning_Report.pdf', section: '3.2 Gas train design', quote: 'Total flow basis 1,120,000 Nm³/h.' },
         { doc: 'Mosjoen_GTC_Basic_Engineering_Data_Sheet.pdf', section: '4.5 Fan sizing', quote: 'ID fan capacity 740,000 Am³/h at 4,850 Pa static pressure...' }
@@ -216,7 +216,7 @@ function App() {
         </header>
 
         <section className="hero-section">
-          <div className="eyebrow">Internal document intelligence / Dokumentinnsikt</div>
+          <div className="eyebrow">Internal document intelligence</div>
           <h1>Internal document intelligence</h1>
           <div className="red-rule" />
           <p>
@@ -228,7 +228,7 @@ function App() {
           <aside className="panel upload-panel">
             <div className="panel-heading">
               <div>
-                <h2>Document upload / Dokumenter</h2>
+                <h2>Document upload</h2>
                 <p>Upload PDFs to add technical context to this session.</p>
               </div>
               <button onClick={clearSession} className="secondary-icon-button" title="Clear Session / Delete All Documents"><RotateCcw size={18} /></button>
