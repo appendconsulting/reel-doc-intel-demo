@@ -284,11 +284,6 @@ function App() {
             </form>
           </section>
         </section>
-
-        <footer className="footer-notes">
-          <div><strong>Implementation note:</strong> A production version should route Anthropic API calls through a secure server-side endpoint. API keys must never be exposed client-side.</div>
-          <div><strong>PDF parsing:</strong> The UI is ready for PDF.js. Parsed text can be chunked per document and attached to each Claude request as volatile session context.</div>
-        </footer>
       </div>
     </main>
   );
