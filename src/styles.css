@@ -219,28 +219,28 @@ button { cursor: pointer; }
 
 .messages-pane {
   flex: 1;
-  min-height: 390px;
+  min-height: 320px;
   overflow-y: auto;
-  background: #fafafa;
-  border: 1px solid var(--line);
-  padding: 20px;
+  background: transparent;
+  border: 0;
+  padding: 6px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .message-row { display: flex; animation: rise .32s ease both; }
 .message-row.user { justify-content: flex-end; }
-.message-card { max-width: 920px; }
-.user-card { background: var(--reel-red); color: #fff; padding: 14px 18px; }
-.user-card p { margin: 0; font-weight: 600; }
+.message-card { max-width: min(840px, 88%); border-radius: 14px; }
+.user-card { background: var(--charcoal); color: #fff; padding: 13px 17px; }
+.user-card p { margin: 0; font-weight: 560; line-height: 1.55; }
 .assistant-card {
   background: #fff;
   color: var(--body);
   border: 1px solid var(--line);
   border-left: 4px solid var(--reel-red);
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.04);
+  padding: 18px 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.035);
 }
 .answer-intro { display: flex; gap: 12px; align-items: flex-start; }
 .answer-intro svg { color: var(--reel-red); flex: none; margin-top: 4px; }
@@ -258,7 +258,7 @@ button { cursor: pointer; }
 .thinking { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: .92rem; }
 .thinking span { width: 8px; height: 8px; background: var(--reel-red); border-radius: 50%; animation: pulse 1s ease-in-out infinite; }
 
-.composer { display: flex; gap: 12px; margin-top: 18px; }
+.composer { display: flex; gap: 12px; margin-top: auto; padding-top: 18px; }
 .composer input {
   min-width: 0;
   flex: 1;
