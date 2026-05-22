@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: "Aptos", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  background: #07111d;
+  color: #e7eef7;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; }
+button, input, textarea { font: inherit; }
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(111, 145, 176, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 145, 176, .075) 1px, transparent 1px),
+    radial-gradient(circle at 18% 8%, rgba(45, 126, 165, .28), transparent 28rem),
+    radial-gradient(circle at 82% 16%, rgba(189, 142, 74, .18), transparent 26rem),
+    linear-gradient(135deg, #07111d 0%, #0b1c2d 48%, #07111d 100%);
+  background-size: 34px 34px, 34px 34px, auto, auto, auto;
+}
+
+.steel-card {
+  background: linear-gradient(180deg, rgba(20, 39, 58, .92), rgba(10, 24, 38, .94));
+  border: 1px solid rgba(153, 177, 199, .16);
+  box-shadow: 0 24px 80px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.industrial-line { position: relative; }
+.industrial-line:before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(#8ab8d6, #c89b52, #5b788f);
+  border-radius: 99px;
+}
+
+.scan-bar { animation: scan 2.4s ease-in-out infinite; }
+@keyframes scan { 0%,100% { transform: translateX(-18%); opacity:.25 } 50% { transform: translateX(92%); opacity:.75 } }
+.fade-in { animation: rise .55s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
+
+.drop-active { border-color: rgba(139, 184, 214, .85) !important; background: rgba(18, 55, 78, .72) !important; }
