@@ -294,10 +294,6 @@ function App() {
   );
 }
 
-function TrustPill({ icon, title, text }) {
-  return <div className="trust-card"><div className="trust-icon">{icon}</div><div><h3>{title}</h3><p>{text}</p></div></div>;
-}
-
 function Metric({ value, label }) {
   return <div className="metric-card"><strong>{value}</strong><span>{label}</span></div>;
 }
