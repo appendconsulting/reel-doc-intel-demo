@@ -1,8 +1,8 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
-  AlertTriangle, ArrowRight, Bot, CheckCircle2, DatabaseZap, FileSearch, FileText,
-  LockKeyhole, RotateCcw, Send, ShieldCheck, Thermometer, UploadCloud, X
+  AlertTriangle, ArrowRight, Bot, CheckCircle2, FileSearch, FileText,
+  RotateCcw, Send, Thermometer, UploadCloud, X
 } from 'lucide-react';
 import './styles.css';
 
@@ -212,22 +212,16 @@ function App() {
               <div className="brand-meta">AQCS Knowledge Agent Demo</div>
             </div>
           </div>
-          <div className="privacy-chip"><span /> Enterprise privacy mode</div>
+          <div className="privacy-chip"><span /> Enterprise privacy</div>
         </header>
 
         <section className="hero-section">
           <div className="eyebrow">Internal document intelligence / Dokumentinnsikt</div>
-          <h1>Internal document intelligence for smelter engineering proposals</h1>
+          <h1>Internal document intelligence</h1>
           <div className="red-rule" />
           <p>
-            Upload confidential project PDFs, ask technical questions, and verify every answer against source sections. Built for GTC/FTP engineering teams — calm, traceable, session-only.
+            Upload confidential project PDFs, ask technical questions, and verify every answer against source sections.
           </p>
-        </section>
-
-        <section className="trust-grid">
-          <TrustPill icon={<ShieldCheck size={20} />} title="Secure processing" text="All documents are processed securely. No data is stored or shared externally." />
-          <TrustPill icon={<LockKeyhole size={20} />} title="Session-only / Kun økt" text="Loaded files disappear when the session is cleared or the browser is closed." />
-          <TrustPill icon={<DatabaseZap size={20} />} title="No external database" text="PDF text is held in browser memory and sent only as per-question context." />
         </section>
 
         <section className="workspace-grid">
@@ -269,10 +263,10 @@ function App() {
           <section className="panel chat-panel">
             <div className="panel-heading chat-heading">
               <div>
-                <h2><Bot size={22} /> AI chat agent / Kunnskapsagent</h2>
+                <h2><Bot size={22} /> AI chat agent</h2>
                 <p>Model target: Anthropic Claude Sonnet 4 · Context source: loaded session documents</p>
               </div>
-              <div className="privacy-chip compact"><span /> Enterprise privacy mode</div>
+              <div className="privacy-chip compact"><span /> Enterprise privacy</div>
             </div>
 
             <div className="suggestions-grid">
