@@ -21,3 +21,4 @@ rmSync('assets', { recursive: true, force: true });
 mkdirSync('assets', { recursive: true });
 cpSync('dist/assets', 'assets', { recursive: true });
 cpSync('dist/index.html', 'index.html');
+cpSync('dist/reel-logo.svg', 'reel-logo.svg');
