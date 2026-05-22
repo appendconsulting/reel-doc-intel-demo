@@ -275,15 +275,12 @@ function App() {
             </div>
 
             <div className="messages-pane">
-              {messages.length === 0 && !thinking && (
-                <div className="empty-chat-state">Select a question above or type your own to get started.</div>
-              )}
               {messages.map((msg, i) => <Message key={i} msg={msg} />)}
               {thinking && <div className="thinking"><span /> Searching loaded PDFs and preparing cited answer…</div>}
             </div>
 
             <form onSubmit={(e) => { e.preventDefault(); ask(); }} className="composer">
-              <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask about duct dimensions, gas temperatures, pressure drops, filter media…" />
+              <input value={input} onChange={(e) => setInput(e.target.value)} />
               <button disabled={thinking}>Send <Send size={18} /></button>
             </form>
           </section>
