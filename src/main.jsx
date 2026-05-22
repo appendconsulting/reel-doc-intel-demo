@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   AlertTriangle, ArrowRight, Bot, CheckCircle2, FileSearch, FileText,
-  RotateCcw, Send, Thermometer, UploadCloud, X
+  RotateCcw, Send, UploadCloud, X
 } from 'lucide-react';
 import './styles.css';
 
@@ -150,9 +150,7 @@ function buildClaudeSessionPayload(question, docs) {
 
 function App() {
   const [documents, setDocuments] = useState(sampleDocs);
-  const [messages, setMessages] = useState([
-    { role: 'assistant', ...answerFor('What were the gas inlet temperatures in our previous GTC deliveries?', sampleDocs), demo: true }
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [dragging, setDragging] = useState(false);
   const [thinking, setThinking] = useState(false);
@@ -198,7 +196,7 @@ function App() {
 
   function clearSession() {
     setDocuments([]);
-    setMessages([{ role: 'assistant', text: 'Session cleared. All loaded document references have been removed from this browser session.', bullets: [], citations: [] }]);
+    setMessages([]);
   }
 
   return (
@@ -277,6 +275,9 @@ function App() {
             </div>
 
             <div className="messages-pane">
+              {messages.length === 0 && !thinking && (
+                <div className="empty-chat-state">Select a question above or type your own to get started.</div>
+              )}
               {messages.map((msg, i) => <Message key={i} msg={msg} />)}
               {thinking && <div className="thinking"><span /> Searching loaded PDFs and preparing cited answer…</div>}
             </div>
@@ -315,8 +316,7 @@ function Message({ msg }) {
   return (
     <div className={`message-row ${isUser ? 'user' : 'assistant'}`}>
       <div className={`message-card ${isUser ? 'user-card' : 'assistant-card'}`}>
-        {msg.demo && <div className="demo-pill"><Thermometer size={13} /> Demo scenario answer</div>}
-        {isUser ? <p>{msg.text}</p> : <AssistantAnswer msg={msg} />}
+{isUser ? <p>{msg.text}</p> : <AssistantAnswer msg={msg} />}
       </div>
     </div>
   );
