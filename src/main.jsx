@@ -269,8 +269,11 @@ function App() {
               <div className="privacy-chip compact"><span /> Enterprise privacy</div>
             </div>
 
-            <div className="suggestions-grid">
-              {suggestedQuestions.map(q => <button key={q} onClick={() => ask(q)}>{q}</button>)}
+            <div className="suggestions-block">
+              <div className="suggestions-label">Try asking</div>
+              <div className="suggestions-grid">
+                {suggestedQuestions.map(q => <button key={q} onClick={() => ask(q)}><span>✦</span>{q}</button>)}
+              </div>
             </div>
 
             <div className="messages-pane">
